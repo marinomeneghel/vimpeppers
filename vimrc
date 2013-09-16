@@ -2,35 +2,30 @@ set nocompatible
 
 " Plugins ====================================================================
 
-call plug#begin('~/.vim/bundle')
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mhinz/vim-signify'
-Plug 'ervandew/supertab'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'matchit.zip'
-Plug 'mileszs/ack.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-eunuch'
-Plug 'scrooloose/syntastic'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'sjl/gundo.vim'
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
 
-" Local plugins
-if filereadable(expand('~/.vimrc.plugins.local'))
-    source ~/.vimrc.plugins.local
-endif
-
-call plug#end()
+" Bundles
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'thinkpixellab/flatland', { 'rtp': 'Vim/' }
+Bundle 'ervandew/supertab'
+Bundle 'kien/ctrlp.vim'
+Bundle 'matchit.zip'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 
 " General Config =============================================================
 
@@ -103,6 +98,22 @@ set showbreak=↪
 set wildmode=list:longest
 set wildmenu
 
+" Colors =====================================================================
+" 
+"  flatland / Vim / colors / flatland.vim
+"  if filereadable(expand("~/.vim/bundle/flatland/vim/colors/flatland.vim"))
+"     colorscheme flatland
+" 
+
+
+syntax on
+set background=dark
+set t_Co=256
+if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
+    let g:solarized_termcolors=256
+    colorscheme solarized
+endif
+
 " Scrolling ==================================================================
 
 set scrolloff=3
@@ -111,7 +122,8 @@ set sidescroll=1
 
 " Convenience mappings =======================================================
 
-" Make Y behave
+" Make capitals behave
+nnoremap D d$
 nnoremap Y y$
 
 " It's 2015.
@@ -135,18 +147,26 @@ map <C-l> :nohlsearch<CR>
 noremap  <F1> <NOP>
 inoremap <F1> <NOP>
 
-" Close QuickFix window
-map <silent> <leader>q :cclose<CR>
+" Disable those arrow keys!
+" inoremap  <Up>     <NOP>
+" noremap   <Up>     <NOP>
+" inoremap  <Down>   <NOP>
+" noremap   <Down>   <NOP>
+" inoremap  <Left>   <NOP>
+" noremap   <Left>   <NOP>
+" inoremap  <Right>  <NOP>
+" noremap   <Right>  <NOP>
 
-" Paste toggle
-map <silent> <leader>p :set paste!<CR>
+" Change Working Directory to that of the current file
+cmap cwd lcd %:p:h
 
-" Wrapping
-map <silent> <leader>w :set wrap!<CR>
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
 
-" Recover from accidental Ctrl-U/Ctrl-W
-inoremap <C-U> <C-G>u<C-U>
-inoremap <C-W> <C-G>u<C-W>
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :tabe $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Autocommands ===============================================================
 
