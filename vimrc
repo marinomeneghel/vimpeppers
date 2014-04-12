@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " Bundles
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'ivoputzer/vim-colors-flatland'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
@@ -110,6 +111,7 @@ set background=dark
 set t_Co=256
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
   let g:solarized_termcolors=256
+  let g:solarized_visibility="low"
   colorscheme solarized
 endif
 
