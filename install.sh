@@ -26,7 +26,7 @@ if [ -e "$HOME/.vimpeppers/.git" ]; then
 
 else
 
-  git clone https://github.com/ivoputzer/vimpeppers.git "$HOME/.vimpeppers" >/dev/null 2>&1 || {
+  git clone https://github.com/marinomeneghel/vimpeppers.git "$HOME/.vimpeppers" >/dev/null 2>&1 || {
 
     echo >&2 "\033[1;31m✗ unable to clone remote repository [github]...\033[0m\n= aborted!\033[0m"; exit 1; }
 
