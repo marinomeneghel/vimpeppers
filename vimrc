@@ -148,6 +148,12 @@ map <C-l> :nohlsearch<CR>
 noremap  <F1> <NOP>
 inoremap <F1> <NOP>
 
+" Keep yo hands on the keyboard
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " Change Working Directory to that of the current file
 cmap cwd lcd %:p:h
 
