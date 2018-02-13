@@ -22,10 +22,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+
+" More plugins - Remove " to enable them
+" Plugin 'tpope/vim-rails'
 
 " Local bundles ==============================================================
 
