@@ -52,9 +52,9 @@ echo "\033[1;32m✓ temporary vim folders created...\033[0m"
 
 # prepare vundle
 
-if [ ! -e $HOME/.vim/bundle/vundle ]; then
+if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
 
-  git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle >/dev/null 2>&1 || {
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim >/dev/null 2>&1 || {
 
     echo >&2 "\033[1;31m✗ not able to clone and install vundle [github]...\033[0m\n= aborted!\033[0m"; exit 1; }
 
