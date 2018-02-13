@@ -29,6 +29,11 @@ Plugin 'tpope/vim-unimpaired'
 
 " More plugins - Remove " to enable them
 " Plugin 'tpope/vim-rails'
+" Plug 'scrooloose/syntastic'
+" Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'kana/vim-textobj-user'
+" Plug 'Julian/vim-textobj-variable-segment'
+" Plug 'sjl/gundo.vim'
 
 " Local bundles ==============================================================
 
