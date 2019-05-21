@@ -240,3 +240,6 @@ let g:airline_symbols.branch = '⚡'
 if filereadable(expand('~/.vimrc.local'))
     source ~/.vimrc.local
 endif
+
+vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+com! FormatJSON %!python -m json.tool
