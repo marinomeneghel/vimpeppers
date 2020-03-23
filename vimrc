@@ -26,10 +26,10 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-syntastic/syntastic'
 
 " More plugins - Remove " to enable them
 " Plugin 'tpope/vim-rails'
-" Plug 'scrooloose/syntastic'
 " Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'kana/vim-textobj-user'
 " Plug 'Julian/vim-textobj-variable-segment'
@@ -245,3 +245,13 @@ com! FormatJSON %!python -m json.tool
 
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 com! FormatJSON %!python -m json.tool
+
+" Syntastic setup
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
