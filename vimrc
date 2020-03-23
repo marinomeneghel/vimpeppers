@@ -27,6 +27,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'leafgarland/typescript-vim'
 
 " More plugins - Remove " to enable them
 " Plugin 'tpope/vim-rails'
